@@ -1,4 +1,5 @@
 
+#convenient for now
 total = 3
 clan = 19
 arabic = 21
@@ -15,9 +16,10 @@ giology = 41
 appliedmath = 43
 physics = 45
 
-religion = 49
-nation = 51
-eco = 53
+# religion = 49 #just in case
+# nation = 51
+# eco = 53
+
 s = []
 student = []
 
@@ -84,6 +86,8 @@ def writeGrades(filename):
             f.write('\n')
 
 with open('test.txt','r')as f, open(scienceFile,'w') as sci, open(mathFile,'w') as m, open(literatureFile,'w') as l:
+
+    #kick start the files
     sci.write('المجموع,عربي,انجليزي,لغة ثانية,كيمياء,احياء,جيولوجيا,فيزياء\n')
     m.write('المجموع,عربي,انجليزي,لغة ثانية,رياضات بحتة,كيمياء,رياضيات تطبيقية,فيزياء\n')
     l.write('المجموع,عربي,انجليزي,لغة ثانية,تاريخ,جغرافيا,فلسفة,علم نفس\n')
@@ -92,7 +96,9 @@ with open('test.txt','r')as f, open(scienceFile,'w') as sci, open(mathFile,'w') 
 
     i = 0
     while i < s.__len__()-54:
-        student = s[i:i+54]
+
+        student = s[i:i+54] #each student takes 54 lines of data
+
         if student[clan] == ' أدبي':
             writeGrades(literatureFile)
         elif student[clan] == ' علمي علوم':

@@ -10,7 +10,6 @@ with open('science.txt','r') as f:
             grades.append(l[0])
 
 grades = list(map(float,grades))
-print(grades)
 
 plt.hist(grades, bins='auto')
 plt.show()
