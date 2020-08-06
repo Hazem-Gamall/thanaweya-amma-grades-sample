@@ -15,5 +15,5 @@ for i in range(14100,89900): #collect seating numbers in this range
     with open('natega.txt','a') as f:
         for p in soup.find_all('li',{"class":"nav-item"}):
             f.write(p.get_text())
-        f.write('\n\n')
+        f.write('\n\n') #unnecessary dumbness
 
