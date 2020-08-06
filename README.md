@@ -12,6 +12,6 @@ Thanaweya amma grades' sample scraped from the web
 * Grades are seperated by commas.
 
 # Libraries Used
-* **requests**
-* **BeautifulSoup4**
-* **matplotlib**
+* [requests](https://pypi.org/project/requests/)
+* [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/)
+* [matplotlib](https://pypi.org/project/matplotlib/)
