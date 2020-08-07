@@ -1,9 +1,10 @@
 # thanaweya-amma-grades-sample
-Thanaweya amma grades' sample scraped from the web
+Thanaweya amma grades' sample scraped from the web.
 
 # About The Data
 * This a data sample of thanaweya amma grades scraped from el-dostor website using a range of seating numbers.
-* Data shown here in this repo only contains grades
+* Data shown here in this repo only contains grades.
+
 
 ## Data Format
 * Data is stored in text files.
