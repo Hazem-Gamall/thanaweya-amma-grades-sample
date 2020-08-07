@@ -9,7 +9,7 @@ Thanaweya amma grades' sample scraped from the web.
 ## Data Format
 * Data is stored in .csv files.
 * First line contains the headers for each column of data.
-* Each line represents the grades of a student in the 7 main subjects of his group(أدبي، علمي علوم، علمي رياضة).
+* Each line represents the grades of a student in the 7 main subjects of their group(أدبي، علمي علوم، علمي رياضة).
 * Grades are seperated by commas.
 
 # Libraries Used
