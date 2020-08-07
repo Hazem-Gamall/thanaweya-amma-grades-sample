@@ -12,11 +12,15 @@ philosophy = 33
 psycho = 35
 chem = 37
 bio = 39
-giology = 41
+geology = 41
 appliedmath = 43
 physics = 45
 
-# religion = 49 #just in case
+mathSubj = {total,arabic,english,secondLang,puremath,chem,appliedmath,physics}
+scienceSubj = {total, arabic, english, secondLang, chem, bio, geology, physics}
+literatureSubj = {total,arabic,english,secondLang,history,geography,philosophy,psycho}
+
+# religion = 49 //just in case
 # nation = 51
 # eco = 53
 
@@ -30,82 +34,53 @@ literatureFile = 'literature.txt'
 def writeGrades(filename):
     if filename == mathFile:
         with open(filename,'a') as f:
-            f.write(student[total])
-            f.write(',')
-            f.write(student[arabic])
-            f.write(',')
-            f.write(student[english])
-            f.write(',')
-            f.write(student[secondLang])
-            f.write(',')
-            f.write(student[puremath])
-            f.write(',')
-            f.write(student[chem])
-            f.write(',')
-            f.write(student[appliedmath])
-            f.write(',')
-            f.write(student[physics])
+            for counter, i in enumerate(mathSubj):
+                if counter:
+                    f.write(',')
+
+                f.write(student[i])
             f.write('\n')
 
     elif filename == scienceFile:
         with open(filename,'a') as f:
-            f.write(student[total])
-            f.write(',')
-            f.write(student[arabic])
-            f.write(',')
-            f.write(student[english])
-            f.write(',')
-            f.write(student[secondLang])
-            f.write(',')
-            f.write(student[chem])
-            f.write(',')
-            f.write(student[bio])
-            f.write(',')
-            f.write(student[giology])
-            f.write(',')
-            f.write(student[physics])
+            for counter, i in enumerate(scienceSubj):
+                if counter:
+                    f.write(',')
+
+                f.write(student[i])
             f.write('\n')
 
     elif filename == literatureFile:
         with open(filename,'a') as f:
-            f.write(student[total])
-            f.write(',')
-            f.write(student[arabic])
-            f.write(',')
-            f.write(student[english])
-            f.write(',')
-            f.write(student[secondLang])
-            f.write(',')
-            f.write(student[history])
-            f.write(',')
-            f.write(student[geography])
-            f.write(',')
-            f.write(student[philosophy])
-            f.write(',')
-            f.write(student[psycho])
+            for counter, i in enumerate(literatureSubj):
+                if counter:
+                    f.write(',')
+
+                f.write(student[i])
             f.write('\n')
 
 with open('test.txt','r')as f, open(scienceFile,'w') as sci, open(mathFile,'w') as m, open(literatureFile,'w') as l:
 
     #kick start the files
-    sci.write('المجموع,عربي,انجليزي,لغة ثانية,كيمياء,احياء,جيولوجيا,فيزياء\n')
+    sci.write('المجموع, عربي, انجليزي, لغة ثانية, كيمياء, احياء, جيولوجيا فيزياء\n')
     m.write('المجموع,عربي,انجليزي,لغة ثانية,رياضات بحتة,كيمياء,رياضيات تطبيقية,فيزياء\n')
     l.write('المجموع,عربي,انجليزي,لغة ثانية,تاريخ,جغرافيا,فلسفة,علم نفس\n')
 
     s = f.read().splitlines()
 
-    i = 0
-    while i < s.__len__()-54:
 
-        student = s[i:i+54] #each student takes 54 lines of data
+i = 0
+while i < len(s)-54:
 
-        if student[clan] == ' أدبي':
-            writeGrades(literatureFile)
-        elif student[clan] == ' علمي علوم':
-            writeGrades(scienceFile)
-        elif student[clan] == ' علمي رياضة':
-            writeGrades(mathFile)
+    student = s[i:i+54] #each student takes 54 lines of data
 
-        i+=54
+    if student[clan] == ' أدبي':
+        writeGrades(literatureFile)
+    elif student[clan] == ' علمي علوم':
+        writeGrades(scienceFile)
+    elif student[clan] == ' علمي رياضة':
+        writeGrades(mathFile)
+
+    i+=54
 
 
