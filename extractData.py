@@ -27,9 +27,9 @@ literatureSubj = {total,arabic,english,secondLang,history,geography,philosophy,p
 s = []
 student = []
 
-mathFile = 'math.txt'
-scienceFile = 'science.txt'
-literatureFile = 'literature.txt'
+mathFile = 'math.csv'
+scienceFile = 'science.csv'
+literatureFile = 'literature.csv'
 
 def writeGrades(filename):
     if filename == mathFile:
